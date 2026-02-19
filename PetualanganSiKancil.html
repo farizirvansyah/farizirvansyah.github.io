@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="id" id="html-root">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Fariz Irvansyah">
+    <meta name="title" content="Fariz Irvansyah">
+    <meta name="description"
+        content="Fariz Irvansyah adalah seorang Web Developer, Software Engineer, dan Game Developer">
+    <meta name="keywords"
+        content="Fariz Irvansyah, Web Developer, Software Engineer, Game Developer, Portfolio, Projects">
+    <link rel="icon" href="profil-fariz.jpg" type="image/jpg">
+    <title>Petualangan Si Kancil</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+        }
+    </script>
+</head>
+
+<body
+    class="bg-gray-50 text-gray-900 dark:bg-gray-900 dark:text-gray-200 font-sans antialiased transition-colors duration-300">
+
+    <nav
+        class="p-6 flex justify-between items-center bg-white dark:bg-gray-800 shadow-md transition-colors duration-300">
+        <div class="text-2xl font-bold text-blue-600 dark:text-blue-400">
+            <a href="https://farizirvansyah.github.io/">FI.</a>
+        </div>
+
+        <div class="flex items-center space-x-6">
+            <ul class="hidden md:flex space-x-6 text-sm font-semibold tracking-wider">
+                <li><a href="#isi" class="hover:text-blue-500 transition translate-text" data-id="PROYEK"
+                        data-en="PROJECTS">PROYEK</a></li>
+                <li><a href="#kontak" class="hover:text-blue-500 transition translate-text" data-id="KONTAK"
+                        data-en="CONTACT">KONTAK</a></li>
+            </ul>
+
+            <div class="flex items-center space-x-4 border-l pl-4 border-gray-300 dark:border-gray-600">
+                <button id="lang-toggle"
+                    class="font-bold text-sm bg-gray-200 dark:bg-gray-700 px-3 py-1 rounded-md hover:bg-gray-300 dark:hover:bg-gray-600 transition">
+                    🇮🇩 ID
+                </button>
+
+                <button id="theme-toggle"
+                    class="p-2 rounded-full bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 transition">
+                    <svg id="moon-icon" class="w-5 h-5 hidden" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+                    </svg>
+                    <svg id="sun-icon" class="w-5 h-5 hidden text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd"
+                            d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4.22 3.22a1 1 0 011.415 0l.85.85a1 1 0 11-1.414 1.415l-.85-.85a1 1 0 010-1.415zM18 10a1 1 0 01-1 1h-1a1 1 0 110-2h1a1 1 0 011 1zm-3.22 4.22a1 1 0 010 1.415l-.85.85a1 1 0 11-1.415-1.414l.85-.85a1 1 0 011.415 0zM10 16a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zm-4.22-3.22a1 1 0 01-1.415 0l-.85-.85a1 1 0 111.414-1.415l.85.85a1 1 0 010 1.415zM2 10a1 1 0 011-1h1a1 1 0 110 2H3a1 1 0 01-1-1zm3.22-4.22a1 1 0 010-1.415l.85-.85a1 1 0 111.415 1.414l-.85.85a1 1 0 01-1.415 0zM10 5a5 5 0 100 10 5 5 0 000-10z"
+                            clip-rule="evenodd"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <section id="isi" class="bg-gray-200 dark:bg-gray-800 py-20 transition-colors duration-300">
+        
+    </section>
+
+    <footer id="kontak"
+        class="bg-white dark:bg-gray-900 py-10 text-center border-t border-gray-200 dark:border-gray-800 transition-colors duration-300">
+        <h2 class="text-2xl font-bold mb-4 text-gray-900 dark:text-white translate-text" data-id="Mari Berdiskusi"
+            data-en="Let's Connect">Mari Berdiskusi</h2>
+        <div class="flex justify-center space-x-4 mb-8">
+            <a href="#"
+                class="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-white transition">Email</a>
+            <span class="text-gray-400 dark:text-gray-600">|</span>
+            <a href="#"
+                class="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-white transition">GitHub</a>
+            <span class="text-gray-400 dark:text-gray-600">|</span>
+            <a href="#"
+                class="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-white transition">LinkedIn</a>
+        </div>
+        <p class="text-sm text-gray-500 dark:text-gray-600">&copy; 2026 Fariz Irvansyah.</p>
+    </footer>
+
+    <script>
+        // 1. LOGIKA FILTER PROYEK
+        function filterProjects(radio) {
+            const selectedYear = radio.value;
+            const projects = document.querySelectorAll('.project-card');
+            projects.forEach(project => {
+                const projectYear = project.getAttribute('data-year');
+                if (selectedYear === 'semua' || selectedYear === projectYear) {
+                    project.classList.remove('hidden');
+                } else {
+                    project.classList.add('hidden');
+                }
+            });
+        }
+
+        // 2. LOGIKA DARK/LIGHT MODE
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const darkIcon = document.getElementById('sun-icon'); // Matahari untuk tema gelap
+        const lightIcon = document.getElementById('moon-icon'); // Bulan untuk tema terang
+        const html = document.getElementById('html-root');
+
+        // Cek LocalStorage untuk tema
+        if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            html.classList.add('dark');
+            darkIcon.classList.remove('hidden');
+        } else {
+            html.classList.remove('dark');
+            lightIcon.classList.remove('hidden');
+        }
+
+        themeToggleBtn.addEventListener('click', function () {
+            darkIcon.classList.toggle('hidden');
+            lightIcon.classList.toggle('hidden');
+
+            if (localStorage.getItem('color-theme')) {
+                if (localStorage.getItem('color-theme') === 'light') {
+                    html.classList.add('dark');
+                    localStorage.setItem('color-theme', 'dark');
+                } else {
+                    html.classList.remove('dark');
+                    localStorage.setItem('color-theme', 'light');
+                }
+            } else {
+                if (html.classList.contains('dark')) {
+                    html.classList.remove('dark');
+                    localStorage.setItem('color-theme', 'light');
+                } else {
+                    html.classList.add('dark');
+                    localStorage.setItem('color-theme', 'dark');
+                }
+            }
+        });
+
+        // 3. LOGIKA DUA BAHASA (ID / EN)
+        const langToggleBtn = document.getElementById('lang-toggle');
+        const translatableElements = document.querySelectorAll('.translate-text');
+
+        // Cek bahasa dari LocalStorage (default ID)
+        let currentLang = localStorage.getItem('language') || 'id';
+
+        function applyLanguage(lang) {
+            translatableElements.forEach(el => {
+                // Mengambil teks dari atribut data-id atau data-en
+                el.innerHTML = el.getAttribute(`data-${lang}`);
+            });
+            langToggleBtn.innerText = lang === 'id' ? '🇮🇩 ID' : '🇬🇧 EN';
+        }
+
+        // Terapkan bahasa saat halaman dimuat
+        applyLanguage(currentLang);
+
+        // Saat tombol bahasa diklik
+        langToggleBtn.addEventListener('click', () => {
+            currentLang = currentLang === 'id' ? 'en' : 'id';
+            localStorage.setItem('language', currentLang);
+            applyLanguage(currentLang);
+        });
+    </script>
+</body>
+
+</html>
