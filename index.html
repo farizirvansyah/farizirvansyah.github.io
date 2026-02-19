@@ -310,7 +310,7 @@
             const projects = document.querySelectorAll('.project-card');
             projects.forEach(project => {
                 const projectYear = project.getAttribute('data-year');
-                if (selectedYear === '2026' || selectedYear === projectYear) {
+                if (selectedYear === 'semua' || selectedYear === projectYear) {
                     project.classList.remove('hidden');
                 } else {
                     project.classList.add('hidden');
