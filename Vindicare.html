@@ -5,10 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Fariz Irvansyah">
-    <meta name="title" content="Petualangan Si Kancil: 2D Maze - Fariz Irvansyah">
-    <meta name="description" content="Detail proyek pengembangan game petualangan labirin 2D Petualangan Si Kancil dengan algoritma A*.">
+    <meta name="title" content="Vindicare - Fariz Irvansyah">
+    <meta name="description" content="Detail proyek pengembangan game Vindicare dengan implementasi Finite State Machine (FSM).">
     <link rel="icon" href="images/favicon.png" type="image/png">
-    <title>Petualangan Si Kancil: 2D Maze | Fariz Irvansyah</title>
+    <title>Vindicare | Fariz Irvansyah</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -53,8 +53,8 @@
         <div class="flex flex-col lg:flex-row gap-12 items-start">
             <div class="w-full lg:w-1/2">
                 <div class="aspect-video bg-gray-300 dark:bg-gray-700 rounded-xl overflow-hidden shadow-2xl flex items-center justify-center border border-gray-200 dark:border-gray-700 relative group">
-                    <img src="images/banner-kancil.png" alt="Petualangan Si Kancil Game Banner" class="w-full h-full object-cover fallback-bg">
-                    <span class="absolute text-gray-500 font-semibold opacity-50 translate-text" data-id="[Banner Utama Game]" data-en="[Main Game Banner]">[Banner Utama Game]</span>
+                    <img src="images/banner-vindicare.png" alt="Vindicare Game Banner" class="w-full h-full object-cover fallback-bg">
+                    <span class="absolute text-gray-500 font-semibold opacity-50 translate-text" data-id="[Banner Vindicare]" data-en="[Vindicare Banner]">[Banner Vindicare]</span>
                 </div>
             </div>
 
@@ -62,11 +62,11 @@
                 <div class="flex items-center gap-3 mb-4">
                     <span class="bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200 text-xs font-bold px-3 py-1 rounded-full">Unity</span>
                     <span class="bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-200 text-xs font-bold px-3 py-1 rounded-full">C#</span>
-                    <span class="bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200 text-xs font-bold px-3 py-1 rounded-full">A* Pathfinding</span>
+                    <span class="bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-200 text-xs font-bold px-3 py-1 rounded-full">Finite State Machine</span>
                 </div>
                 
-                <h1 class="text-4xl lg:text-5xl font-extrabold mb-4 text-gray-900 dark:text-white">Petualangan Si Kancil: 2D Maze</h1>
-                <p class="text-xl text-gray-600 dark:text-gray-400 mb-8 translate-text" data-id="Game petualangan labirin 2D yang memadukan cerita rakyat Indonesia dengan kecerdasan buatan musuh yang dinamis." data-en="A 2D maze adventure game blending Indonesian folklore with dynamic enemy artificial intelligence.">Game petualangan labirin 2D yang memadukan cerita rakyat Indonesia dengan kecerdasan buatan musuh yang dinamis.</p>
+                <h1 class="text-4xl lg:text-5xl font-extrabold mb-4 text-gray-900 dark:text-white">Vindicare</h1>
+                <p class="text-xl text-gray-600 dark:text-gray-400 mb-8 translate-text" data-id="Game petualangan 2D dengan arsitektur sistem musuh yang terstruktur menggunakan pola Finite State Machine." data-en="A 2D maze adventure game with a structured enemy system architecture using the Finite State Machine pattern.">Game petualangan 2D dengan arsitektur sistem musuh yang terstruktur menggunakan pola Finite State Machine.</p>
                 
                 <div class="flex gap-4">
                     <a href="LINK_PLAY_GAME_JIKA_ADA" target="_blank" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition shadow-lg flex items-center translate-text" data-id="Mainkan Game" data-en="Play Game">
@@ -88,22 +88,22 @@
             <div>
                 <h2 class="text-2xl font-bold mb-4 text-gray-900 dark:text-white translate-text" data-id="Tentang Proyek" data-en="About the Project">Tentang Proyek</h2>
                 <div class="text-gray-700 dark:text-gray-300 space-y-4 leading-relaxed">
-                    <p class="translate-text" data-id="Proyek ini dikembangkan sebagai bagian dari penelitian tugas akhir (skripsi) untuk mengeksplorasi pembuatan sistem navigasi cerdas dalam sebuah lingkungan yang dinamis. Mengambil inspirasi dari cerita rakyat lokal, pemain mengendalikan karakter Petualangan Si Kancil yang harus melarikan diri dari rintangan dan musuh di dalam labirin." data-en="This project was developed as part of an undergraduate thesis research to explore the creation of an intelligent navigation system in a dynamic environment. Drawing inspiration from local folklore, players control the character Petualangan Si Kancil, who must escape obstacles and enemies within a maze.">
-                        Proyek ini dikembangkan sebagai bagian dari penelitian tugas akhir (skripsi) untuk mengeksplorasi pembuatan sistem navigasi cerdas dalam sebuah lingkungan yang dinamis. Mengambil inspirasi dari cerita rakyat lokal, pemain mengendalikan karakter Petualangan Si Kancil yang harus melarikan diri dari rintangan dan musuh di dalam labirin.
+                    <p class="translate-text" data-id="Vindicare adalah proyek game petualangan 2D yang saya kembangkan pada tahun 2023. Game ini menantang pemain untuk mencari jalan keluar dari kompleks yang dipenuhi jebakan dan musuh." data-en="Vindicare is a 2D maze adventure game project I developed in 2023. This game challenges players to find their way out of a maze complex filled with traps and enemies.">
+                        Vindicare adalah proyek game petualangan 2D yang saya kembangkan pada tahun 2023. Game ini menantang pemain untuk mencari jalan keluar dari kompleks yang dipenuhi jebakan dan musuh.
                     </p>
                 </div>
             </div>
 
             <div>
-                <h2 class="text-2xl font-bold mb-4 text-gray-900 dark:text-white translate-text" data-id="Tantangan Teknis & Algoritma A*" data-en="Technical Challenge & A* Algorithm">Tantangan Teknis & Algoritma A*</h2>
+                <h2 class="text-2xl font-bold mb-4 text-gray-900 dark:text-white translate-text" data-id="Tantangan Teknis & Finite State Machine (FSM)" data-en="Technical Challenge & Finite State Machine (FSM)">Tantangan Teknis & Finite State Machine (FSM)</h2>
                 <div class="text-gray-700 dark:text-gray-300 space-y-4 leading-relaxed">
-                    <p class="translate-text" data-id="Fokus utama dari pengembangan game ini adalah penciptaan AI musuh yang tidak sekadar bergerak acak, melainkan mampu memburu pemain dengan rute paling efisien. Untuk mencapai hal ini, saya mengimplementasikan algoritma pathfinding A* (A-Star)." data-en="The main focus of this game development was creating an enemy AI that doesn't just move randomly, but is capable of hunting the player using the most efficient route. To achieve this, I implemented the A* (A-Star) pathfinding algorithm.">
-                        Fokus utama dari pengembangan game ini adalah penciptaan AI musuh yang tidak sekadar bergerak acak, melainkan mampu memburu pemain dengan rute paling efisien. Untuk mencapai hal ini, saya mengimplementasikan algoritma *pathfinding* A* (A-Star).
+                    <p class="translate-text" data-id="Dalam pengembangan Vindicare, saya tidak ingin musuh hanya bergerak maju-mundur secara bodoh. Saya membutuhkan sistem kecerdasan buatan yang bisa bereaksi terhadap tindakan pemain. Solusi teknis yang saya gunakan adalah pola desain Finite State Machine (FSM)." data-en="In the development of Vindicare, I didn't want the enemies to just move back and forth mindlessly. I needed an AI system that could react to the player's actions. The technical solution I used was the Finite State Machine (FSM) design pattern.">
+                        Dalam pengembangan Vindicare, saya tidak ingin musuh hanya bergerak maju-mundur secara bodoh. Saya membutuhkan sistem kecerdasan buatan yang bisa bereaksi terhadap tindakan pemain. Solusi teknis yang saya gunakan adalah pola desain *Finite State Machine* (FSM).
                     </p>
                     <ul class="list-disc pl-6 space-y-2">
-                        <li class="translate-text" data-id="Membangun sistem Grid untuk memetakan area yang bisa dilewati (walkable) dan tembok labirin (unwalkable)." data-en="Building a Grid system to map walkable areas and unwalkable maze walls.">Membangun sistem Grid untuk memetakan area yang bisa dilewati (*walkable*) dan tembok labirin (*unwalkable*).</li>
-                        <li class="translate-text" data-id="Menghitung nilai f-cost (jarak terpendek dari awal ke target) secara real-time saat pemain mengubah posisi." data-en="Calculating the f-cost value (shortest distance from start to target) in real-time as the player changes position.">Menghitung nilai f-cost (jarak terpendek dari awal ke target) secara real-time saat pemain mengubah posisi.</li>
-                        <li class="translate-text" data-id="Mengoptimalkan skrip C# di Unity agar kalkulasi AI tidak membebani frame rate (FPS) game." data-en="Optimizing C# scripts in Unity so AI calculations do not drop the game's frame rate (FPS).">Mengoptimalkan skrip C# di Unity agar kalkulasi AI tidak membebani frame rate (FPS) game.</li>
+                        <li class="translate-text" data-id="Membagi logika musuh ke dalam status yang terisolasi (misalnya: Idle, Patrol, Chase, dan Attack)." data-en="Dividing enemy logic into isolated states (e.g., Idle, Patrol, Chase, and Attack).">Membagi logika musuh ke dalam status yang terisolasi (misalnya: *Idle*, *Patrol*, *Chase*, dan *Attack*).</li>
+                        <li class="translate-text" data-id="Mengelola transisi antar status dengan presisi. Contohnya, musuh akan beralih dari 'Patrol' ke 'Chase' secara otomatis jika jarak pemain berada dalam radius deteksi musuh." data-en="Managing transitions between states with precision. For example, an enemy switches from 'Patrol' to 'Chase' automatically if the player is within the enemy's detection radius.">Mengelola transisi antar status dengan presisi. Contohnya, musuh akan beralih dari '*Patrol*' ke '*Chase*' secara otomatis jika jarak pemain berada dalam radius deteksi musuh.</li>
+                        <li class="translate-text" data-id="Penerapan FSM ini membuktikan bahwa kode dapat menjadi jauh lebih bersih, terstruktur, dan mudah di-debug (scalable) dibandingkan menggunakan banyak if-else bertingkat di Unity." data-en="Applying FSM proved that the code can become much cleaner, structured, and easier to debug (scalable) compared to using multiple nested if-else statements in Unity.">Penerapan FSM ini membuktikan bahwa kode dapat menjadi jauh lebih bersih, terstruktur, dan mudah di-debug (*scalable*) dibandingkan menggunakan banyak `if-else` bertingkat di Unity.</li>
                     </ul>
                 </div>
             </div>
@@ -112,11 +112,11 @@
                 <h2 class="text-2xl font-bold mb-6 text-gray-900 dark:text-white translate-text" data-id="Galeri Visual" data-en="Visual Gallery">Galeri Visual</h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div class="bg-gray-200 dark:bg-gray-800 aspect-video rounded-lg overflow-hidden border border-gray-200 dark:border-gray-700 relative">
-                        <img src="images/kancil-ss1.png" alt="Gameplay 1" class="w-full h-full object-cover fallback-bg">
+                        <img src="images/vindicare-ss1.png" alt="Vindicare Gameplay 1" class="w-full h-full object-cover fallback-bg">
                         <span class="absolute inset-0 flex items-center justify-center text-gray-500 font-semibold opacity-50 translate-text" data-id="[Screenshot 1]" data-en="[Screenshot 1]">[Screenshot 1]</span>
                     </div>
                     <div class="bg-gray-200 dark:bg-gray-800 aspect-video rounded-lg overflow-hidden border border-gray-200 dark:border-gray-700 relative">
-                        <img src="images/kancil-ss2.png" alt="Gameplay 2" class="w-full h-full object-cover fallback-bg">
+                        <img src="images/vindicare-ss2.png" alt="Vindicare Gameplay 2" class="w-full h-full object-cover fallback-bg">
                         <span class="absolute inset-0 flex items-center justify-center text-gray-500 font-semibold opacity-50 translate-text" data-id="[Screenshot 2]" data-en="[Screenshot 2]">[Screenshot 2]</span>
                     </div>
                 </div>
@@ -151,7 +151,6 @@
     </footer>
 
     <script>
-        // 1. LOGIKA DARK/LIGHT MODE
         const themeToggleBtn = document.getElementById('theme-toggle');
         const darkIcon = document.getElementById('sun-icon');
         const lightIcon = document.getElementById('moon-icon');
@@ -187,7 +186,6 @@
             }
         });
 
-        // 2. LOGIKA DUA BAHASA (ID / EN)
         const langToggleBtn = document.getElementById('lang-toggle');
         const translatableElements = document.querySelectorAll('.translate-text');
         let currentLang = localStorage.getItem('language') || 'id';
@@ -207,7 +205,6 @@
             applyLanguage(currentLang);
         });
         
-        // CSS tambahan untuk menyembunyikan gambar fallback jika src kosong/error
         document.querySelectorAll('img.fallback-bg').forEach(img => {
             img.addEventListener('error', function() {
                 this.style.display = 'none';
