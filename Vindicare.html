@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Fariz Irvansyah">
     <meta name="title" content="Vindicare - Fariz Irvansyah">
-    <meta name="description" content="Detail proyek pengembangan game Vindicare dengan implementasi Finite State Machine (FSM).">
+    <meta name="description"
+        content="Detail proyek pengembangan game aksi-petualangan 2D Vindicare menggunakan Unity dan C#.">
     <link rel="icon" href="images/favicon.png" type="image/png">
     <title>Vindicare | Fariz Irvansyah</title>
     <script src="https://cdn.tailwindcss.com"></script>
@@ -17,64 +18,110 @@
     </script>
 </head>
 
-<body class="bg-gray-50 text-gray-900 dark:bg-gray-900 dark:text-gray-200 font-sans antialiased transition-colors duration-300">
+<body
+    class="bg-gray-50 text-gray-900 dark:bg-gray-900 dark:text-gray-200 font-sans antialiased transition-colors duration-300">
 
-    <nav class="p-6 flex justify-between items-center bg-white dark:bg-gray-800 shadow-md transition-colors duration-300 sticky top-0 z-50">
+    <nav
+        class="p-6 flex justify-between items-center bg-white dark:bg-gray-800 shadow-md transition-colors duration-300 sticky top-0 z-50">
         <div class="text-2xl font-bold text-blue-600 dark:text-blue-400">
             <a href="index.html">FI.</a>
         </div>
 
         <div class="flex items-center space-x-6">
             <ul class="hidden md:flex space-x-6 text-sm font-semibold tracking-wider">
-                <li><a href="index.html#tentang" class="hover:text-blue-500 transition translate-text" data-id="TENTANG" data-en="ABOUT">TENTANG</a></li>
-                <li><a href="index.html#skills" class="hover:text-blue-500 transition translate-text" data-id="KEMAMPUAN" data-en="SKILLS">KEMAMPUAN</a></li>
-                <li><a href="index.html#proyek" class="hover:text-blue-500 transition translate-text" data-id="PROYEK" data-en="PROJECTS">PROYEK</a></li>
-                <li><a href="#kontak" class="hover:text-blue-500 transition translate-text" data-id="KONTAK" data-en="CONTACT">KONTAK</a></li>
+                <li><a href="index.html#tentang" class="hover:text-blue-500 transition translate-text" data-id="TENTANG"
+                        data-en="ABOUT">TENTANG</a></li>
+                <li><a href="index.html#skills" class="hover:text-blue-500 transition translate-text"
+                        data-id="KEMAMPUAN" data-en="SKILLS">KEMAMPUAN</a></li>
+                <li><a href="index.html#proyek" class="hover:text-blue-500 transition translate-text" data-id="PROYEK"
+                        data-en="PROJECTS">PROYEK</a></li>
+                <li><a href="#kontak" class="hover:text-blue-500 transition translate-text" data-id="KONTAK"
+                        data-en="CONTACT">KONTAK</a></li>
             </ul>
 
             <div class="flex items-center space-x-4 border-l pl-4 border-gray-300 dark:border-gray-600">
-                <button id="lang-toggle" class="font-bold text-sm bg-gray-200 dark:bg-gray-700 px-3 py-1 rounded-md hover:bg-gray-300 dark:hover:bg-gray-600 transition">
+                <button id="lang-toggle"
+                    class="font-bold text-sm bg-gray-200 dark:bg-gray-700 px-3 py-1 rounded-md hover:bg-gray-300 dark:hover:bg-gray-600 transition">
                     🇮🇩 ID
                 </button>
-                <button id="theme-toggle" class="p-2 rounded-full bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 transition">
-                    <svg id="moon-icon" class="w-5 h-5 hidden" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
-                    <svg id="sun-icon" class="w-5 h-5 hidden text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4.22 3.22a1 1 0 011.415 0l.85.85a1 1 0 11-1.414 1.415l-.85-.85a1 1 0 010-1.415zM18 10a1 1 0 01-1 1h-1a1 1 0 110-2h1a1 1 0 011 1zm-3.22 4.22a1 1 0 010 1.415l-.85.85a1 1 0 11-1.415-1.414l.85-.85a1 1 0 011.415 0zM10 16a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zm-4.22-3.22a1 1 0 01-1.415 0l-.85-.85a1 1 0 111.414-1.415l.85.85a1 1 0 010 1.415zM2 10a1 1 0 011-1h1a1 1 0 110 2H3a1 1 0 01-1-1zm3.22-4.22a1 1 0 010-1.415l.85-.85a1 1 0 111.415 1.414l-.85.85a1 1 0 01-1.415 0zM10 5a5 5 0 100 10 5 5 0 000-10z" clip-rule="evenodd"></path></svg>
+                <button id="theme-toggle"
+                    class="p-2 rounded-full bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 transition">
+                    <svg id="moon-icon" class="w-5 h-5 hidden" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+                    </svg>
+                    <svg id="sun-icon" class="w-5 h-5 hidden text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd"
+                            d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4.22 3.22a1 1 0 011.415 0l.85.85a1 1 0 11-1.414 1.415l-.85-.85a1 1 0 010-1.415zM18 10a1 1 0 01-1 1h-1a1 1 0 110-2h1a1 1 0 011 1zm-3.22 4.22a1 1 0 010 1.415l-.85.85a1 1 0 11-1.415-1.414l.85-.85a1 1 0 011.415 0zM10 16a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zm-4.22-3.22a1 1 0 01-1.415 0l-.85-.85a1 1 0 111.414-1.415l.85.85a1 1 0 010 1.415zM2 10a1 1 0 011-1h1a1 1 0 110 2H3a1 1 0 01-1-1zm3.22-4.22a1 1 0 010-1.415l.85-.85a1 1 0 111.415 1.414l-.85.85a1 1 0 01-1.415 0zM10 5a5 5 0 100 10 5 5 0 000-10z"
+                            clip-rule="evenodd"></path>
+                    </svg>
                 </button>
             </div>
         </div>
     </nav>
 
     <header class="container mx-auto px-6 py-12 lg:py-20">
-        <a href="index.html" class="inline-flex items-center text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 font-semibold mb-8 transition group">
-            <svg class="w-5 h-5 mr-2 transform group-hover:-translate-x-1 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
+        <a href="index.html"
+            class="inline-flex items-center text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 font-semibold mb-8 transition group">
+            <svg class="w-5 h-5 mr-2 transform group-hover:-translate-x-1 transition" fill="none" stroke="currentColor"
+                viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18">
+                </path>
+            </svg>
             <span class="translate-text" data-id="Kembali ke Beranda" data-en="Back to Home">Kembali ke Beranda</span>
         </a>
 
         <div class="flex flex-col lg:flex-row gap-12 items-start">
             <div class="w-full lg:w-1/2">
-                <div class="aspect-video bg-gray-300 dark:bg-gray-700 rounded-xl overflow-hidden shadow-2xl flex items-center justify-center border border-gray-200 dark:border-gray-700 relative group">
-                    <img src="images/banner-vindicare.png" alt="Vindicare Game Banner" class="w-full h-full object-cover fallback-bg">
-                    <span class="absolute text-gray-500 font-semibold opacity-50 translate-text" data-id="[Banner Vindicare]" data-en="[Vindicare Banner]">[Banner Vindicare]</span>
+                <div
+                    class="aspect-video bg-gray-300 dark:bg-gray-700 rounded-xl overflow-hidden shadow-2xl flex items-center justify-center border border-gray-200 dark:border-gray-700 relative group">
+                    <img src="images/vindicare-banner.png" alt="Vindicare Game Banner"
+                        class="w-full h-full object-cover fallback-bg">
+                    <span class="absolute text-gray-500 font-semibold opacity-50 translate-text"
+                        data-id="[Banner Vindicare]" data-en="[Vindicare Banner]">[Banner Vindicare]</span>
                 </div>
             </div>
 
             <div class="w-full lg:w-1/2">
-                <div class="flex items-center gap-3 mb-4">
-                    <span class="bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200 text-xs font-bold px-3 py-1 rounded-full">Unity</span>
-                    <span class="bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-200 text-xs font-bold px-3 py-1 rounded-full">C#</span>
-                    <span class="bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-200 text-xs font-bold px-3 py-1 rounded-full">Finite State Machine</span>
+                <div class="flex flex-wrap items-center gap-3 mb-4">
+                    <span
+                        class="bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200 text-xs font-bold px-3 py-1 rounded-full">Unity
+                        Engine</span>
+                    <span
+                        class="bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-200 text-xs font-bold px-3 py-1 rounded-full">C#</span>
+                    <span
+                        class="bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-200 text-xs font-bold px-3 py-1 rounded-full">Pixel
+                        Art</span>
+                    <span
+                        class="bg-gray-200 text-gray-800 dark:bg-gray-700 dark:text-gray-200 text-xs font-bold px-3 py-1 rounded-full">Desktop
+                        Game</span>
                 </div>
-                
+
                 <h1 class="text-4xl lg:text-5xl font-extrabold mb-4 text-gray-900 dark:text-white">Vindicare</h1>
-                <p class="text-xl text-gray-600 dark:text-gray-400 mb-8 translate-text" data-id="Game petualangan 2D dengan arsitektur sistem musuh yang terstruktur menggunakan pola Finite State Machine." data-en="A 2D maze adventure game with a structured enemy system architecture using the Finite State Machine pattern.">Game petualangan 2D dengan arsitektur sistem musuh yang terstruktur menggunakan pola Finite State Machine.</p>
-                
-                <div class="flex gap-4">
-                    <a href="LINK_PLAY_GAME_JIKA_ADA" target="_blank" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition shadow-lg flex items-center translate-text" data-id="Mainkan Game" data-en="Play Game">
-                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                        Mainkan Game
+                <p class="text-xl text-gray-600 dark:text-gray-400 mb-8 translate-text"
+                    data-id="Game aksi-petualangan 2D desktop tentang perjuangan seorang kesatria melawan raja iblis untuk membalaskan dendam kerajaannya."
+                    data-en="A 2D desktop action-adventure game about a knight's struggle against a demon king to avenge his kingdom.">
+                    Game aksi-petualangan 2D desktop tentang perjuangan seorang kesatria melawan raja iblis untuk
+                    membalaskan dendam kerajaannya.</p>
+
+                <div class="flex flex-wrap gap-4">
+                    <a href="LINK_PLAY_GAME" target="_blank"
+                        class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition shadow-lg flex items-center translate-text"
+                        data-id="Mainkan Game (Desktop)" data-en="Play Game (Desktop)">
+                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z">
+                            </path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                        Mainkan Game (Desktop)
                     </a>
-                    <a href="LINK_GITHUB_GAME" target="_blank" class="bg-gray-200 hover:bg-gray-300 dark:bg-gray-800 dark:hover:bg-gray-700 text-gray-900 dark:text-white font-bold py-3 px-6 rounded-lg transition shadow-lg flex items-center border border-transparent dark:border-gray-600">
-                        <svg class="w-5 h-5 mr-2 fill-current" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                    <a href="LINK_GITHUB_ANDA" target="_blank"
+                        class="bg-gray-200 hover:bg-gray-300 dark:bg-gray-800 dark:hover:bg-gray-700 text-gray-900 dark:text-white font-bold py-3 px-6 rounded-lg transition shadow-lg flex items-center border border-transparent dark:border-gray-600">
+                        <svg class="w-5 h-5 mr-2 fill-current" viewBox="0 0 24 24">
+                            <path
+                                d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                        </svg>
                         <span class="translate-text" data-id="Source Code" data-en="Source Code">Source Code</span>
                     </a>
                 </div>
@@ -84,40 +131,106 @@
 
     <section class="container mx-auto px-6 py-12 border-t border-gray-200 dark:border-gray-800">
         <div class="max-w-4xl mx-auto space-y-12">
-            
+
             <div>
-                <h2 class="text-2xl font-bold mb-4 text-gray-900 dark:text-white translate-text" data-id="Tentang Proyek" data-en="About the Project">Tentang Proyek</h2>
+                <h2 class="text-2xl font-bold mb-4 text-gray-900 dark:text-white translate-text"
+                    data-id="Tentang Proyek & Alur Cerita" data-en="About the Project & Storyline">Tentang Proyek & Alur
+                    Cerita</h2>
                 <div class="text-gray-700 dark:text-gray-300 space-y-4 leading-relaxed">
-                    <p class="translate-text" data-id="Vindicare adalah proyek game petualangan 2D yang saya kembangkan pada tahun 2023. Game ini menantang pemain untuk mencari jalan keluar dari kompleks yang dipenuhi jebakan dan musuh." data-en="Vindicare is a 2D maze adventure game project I developed in 2023. This game challenges players to find their way out of a maze complex filled with traps and enemies.">
-                        Vindicare adalah proyek game petualangan 2D yang saya kembangkan pada tahun 2023. Game ini menantang pemain untuk mencari jalan keluar dari kompleks yang dipenuhi jebakan dan musuh.
+                    <p class="translate-text"
+                        data-id="Vindicare (berasal dari bahasa Latin yang berarti 'pembalas') adalah proyek game bergenre aksi-petualangan yang dikembangkan bersama tim FHK Games. Dalam tim ini, saya memegang peran kunci sebagai Programmer, Animator, sekaligus Cut Scene Designer."
+                        data-en="Vindicare (derived from Latin meaning 'avenger') is an action-adventure game project developed with the FHK Games team. In this team, I held key roles as a Programmer, Animator, and Cut Scene Designer.">
+                        Vindicare (berasal dari bahasa Latin yang berarti 'pembalas') adalah proyek game bergenre
+                        aksi-petualangan yang dikembangkan bersama tim FHK Games. Dalam tim ini, saya memegang peran
+                        kunci sebagai <strong>Programmer, Animator, sekaligus Cut Scene Designer</strong>.
+                    </p>
+                    <p class="translate-text"
+                        data-id="Game ini menceritakan kisah seorang kesatria pemberani yang dinikahkan dengan seorang putri kerajaan yang memiliki kekuatan magis. Tragedi terjadi ketika Raja Iblis menyerang pesta pernikahan, membunuh sang raja, dan menculik putri. Pemain akan mengendalikan kesatria yang selamat ini dalam misinya menembus level-level penuh rintangan untuk membalas dendam."
+                        data-en="The game tells the story of a brave knight who is married to a royal princess possessing magical powers. Tragedy strikes when the Demon King attacks the wedding, kills the king, and kidnaps the princess. Players control this surviving knight on a mission through obstacle-filled levels to exact revenge.">
+                        Game ini menceritakan kisah seorang kesatria pemberani yang dinikahkan dengan seorang putri
+                        kerajaan yang memiliki kekuatan magis. Tragedi terjadi ketika Raja Iblis menyerang pesta
+                        pernikahan, membunuh sang raja, dan menculik putri. Pemain akan mengendalikan kesatria yang
+                        selamat ini dalam misinya menembus level-level penuh rintangan untuk membalas dendam.
                     </p>
                 </div>
             </div>
 
             <div>
-                <h2 class="text-2xl font-bold mb-4 text-gray-900 dark:text-white translate-text" data-id="Tantangan Teknis & Finite State Machine (FSM)" data-en="Technical Challenge & Finite State Machine (FSM)">Tantangan Teknis & Finite State Machine (FSM)</h2>
+                <h2 class="text-2xl font-bold mb-4 text-gray-900 dark:text-white translate-text"
+                    data-id="Mekanisme & Fitur Teknis" data-en="Mechanics & Technical Features">Mekanisme & Fitur Teknis
+                </h2>
                 <div class="text-gray-700 dark:text-gray-300 space-y-4 leading-relaxed">
-                    <p class="translate-text" data-id="Dalam pengembangan Vindicare, saya tidak ingin musuh hanya bergerak maju-mundur secara bodoh. Saya membutuhkan sistem kecerdasan buatan yang bisa bereaksi terhadap tindakan pemain. Solusi teknis yang saya gunakan adalah pola desain Finite State Machine (FSM)." data-en="In the development of Vindicare, I didn't want the enemies to just move back and forth mindlessly. I needed an AI system that could react to the player's actions. The technical solution I used was the Finite State Machine (FSM) design pattern.">
-                        Dalam pengembangan Vindicare, saya tidak ingin musuh hanya bergerak maju-mundur secara bodoh. Saya membutuhkan sistem kecerdasan buatan yang bisa bereaksi terhadap tindakan pemain. Solusi teknis yang saya gunakan adalah pola desain *Finite State Machine* (FSM).
+                    <p class="translate-text"
+                        data-id="Pengembangan game ini menggunakan Unity Engine dengan skrip berbasis C#. Fokus utama pemrograman saya terletak pada penciptaan pergerakan yang mulus dan pertarungan yang menantang:"
+                        data-en="The game was developed using Unity Engine with C#-based scripting. My main programming focus was on creating smooth movement and challenging combat:">
+                        Pengembangan game ini menggunakan Unity Engine dengan skrip berbasis C#. Fokus utama pemrograman
+                        saya terletak pada penciptaan pergerakan yang mulus dan pertarungan yang menantang:
                     </p>
-                    <ul class="list-disc pl-6 space-y-2">
-                        <li class="translate-text" data-id="Membagi logika musuh ke dalam status yang terisolasi (misalnya: Idle, Patrol, Chase, dan Attack)." data-en="Dividing enemy logic into isolated states (e.g., Idle, Patrol, Chase, and Attack).">Membagi logika musuh ke dalam status yang terisolasi (misalnya: *Idle*, *Patrol*, *Chase*, dan *Attack*).</li>
-                        <li class="translate-text" data-id="Mengelola transisi antar status dengan presisi. Contohnya, musuh akan beralih dari 'Patrol' ke 'Chase' secara otomatis jika jarak pemain berada dalam radius deteksi musuh." data-en="Managing transitions between states with precision. For example, an enemy switches from 'Patrol' to 'Chase' automatically if the player is within the enemy's detection radius.">Mengelola transisi antar status dengan presisi. Contohnya, musuh akan beralih dari '*Patrol*' ke '*Chase*' secara otomatis jika jarak pemain berada dalam radius deteksi musuh.</li>
-                        <li class="translate-text" data-id="Penerapan FSM ini membuktikan bahwa kode dapat menjadi jauh lebih bersih, terstruktur, dan mudah di-debug (scalable) dibandingkan menggunakan banyak if-else bertingkat di Unity." data-en="Applying FSM proved that the code can become much cleaner, structured, and easier to debug (scalable) compared to using multiple nested if-else statements in Unity.">Penerapan FSM ini membuktikan bahwa kode dapat menjadi jauh lebih bersih, terstruktur, dan mudah di-debug (*scalable*) dibandingkan menggunakan banyak `if-else` bertingkat di Unity.</li>
+                    <ul class="list-disc pl-6 space-y-3">
+                        <li>
+                            <strong class="text-gray-900 dark:text-white translate-text" data-id="State Management:"
+                                data-en="State Management:">State Management:</strong>
+                            <span class="translate-text"
+                                data-id="Mengelola dan mengatur transisi logika karakter dengan rapi (seperti pergantian status dari idle, berjalan, hingga menyerang) agar bebas dari bug animasi tumpang tindih."
+                                data-en="Neatly managing and organizing character logic transitions (such as switching states from idle, to walking, to attacking) to be free from overlapping animation bugs.">Mengelola
+                                dan mengatur transisi logika karakter dengan rapi (seperti pergantian status dari
+                                <em>idle</em>, berjalan, hingga menyerang) agar bebas dari bug animasi tumpang
+                                tindih.</span>
+                        </li>
+                        <li>
+                            <strong class="text-gray-900 dark:text-white translate-text"
+                                data-id="Event Handling & Input:" data-en="Event Handling & Input:">Event Handling &
+                                Input:</strong>
+                            <span class="translate-text"
+                                data-id="Merancang sistem kontrol presisi menggunakan keyboard (J/K untuk menyerang, Space untuk melompat) yang responsif terhadap input pemain secara real-time."
+                                data-en="Designing a precision control system using the keyboard (J/K to attack, Space to jump) that is responsive to player input in real-time.">Merancang
+                                sistem kontrol presisi menggunakan keyboard (J/K untuk menyerang, Space untuk melompat)
+                                yang responsif terhadap input pemain secara *real-time*.</span>
+                        </li>
+                        <li>
+                            <strong class="text-gray-900 dark:text-white translate-text"
+                                data-id="Kecerdasan Buatan (AI) Musuh & Bos:"
+                                data-en="Enemy & Boss Artificial Intelligence (AI):">Kecerdasan Buatan (AI) Musuh &
+                                Bos:</strong>
+                            <span class="translate-text"
+                                data-id="Mengimplementasikan logika perilaku musuh (termasuk Boss 'Water Golem') agar mereka tidak hanya diam, melainkan dapat mendeteksi, menyerang, atau merespons pergerakan pemain."
+                                data-en="Implementing behavioral logic for enemies (including the 'Water Golem' Boss) so they don't just stand still, but can detect, attack, or respond to player movements.">Mengimplementasikan
+                                logika perilaku musuh (termasuk Boss 'Water Golem') agar mereka tidak hanya diam,
+                                melainkan dapat mendeteksi, menyerang, atau merespons pergerakan pemain.</span>
+                        </li>
+                        <li>
+                            <strong class="text-gray-900 dark:text-white translate-text"
+                                data-id="Integrasi Visual & Audio:" data-en="Visual & Audio Integration:">Integrasi
+                                Visual & Audio:</strong>
+                            <span class="translate-text"
+                                data-id="Memadukan grafis estetika Pixel Art dengan efek suara (SFX) yang imersif serta merancang UI Menu dan interaksi dialog NPC (seperti dialog dengan Pak Tua)."
+                                data-en="Combining Pixel Art aesthetic graphics with immersive sound effects (SFX) and designing UI Menus and NPC dialog interactions (like the dialog with the Old Man).">Memadukan
+                                grafis estetika Pixel Art dengan efek suara (SFX) yang imersif serta merancang UI Menu
+                                dan interaksi dialog NPC (seperti dialog dengan Pak Tua).</span>
+                        </li>
                     </ul>
                 </div>
             </div>
 
             <div>
-                <h2 class="text-2xl font-bold mb-6 text-gray-900 dark:text-white translate-text" data-id="Galeri Visual" data-en="Visual Gallery">Galeri Visual</h2>
+                <h2 class="text-2xl font-bold mb-6 text-gray-900 dark:text-white translate-text"
+                    data-id="Galeri Gameplay" data-en="Gameplay Gallery">Galeri Gameplay</h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div class="bg-gray-200 dark:bg-gray-800 aspect-video rounded-lg overflow-hidden border border-gray-200 dark:border-gray-700 relative">
-                        <img src="images/vindicare-ss1.png" alt="Vindicare Gameplay 1" class="w-full h-full object-cover fallback-bg">
-                        <span class="absolute inset-0 flex items-center justify-center text-gray-500 font-semibold opacity-50 translate-text" data-id="[Screenshot 1]" data-en="[Screenshot 1]">[Screenshot 1]</span>
+                    <div
+                        class="bg-gray-200 dark:bg-gray-800 aspect-video rounded-lg overflow-hidden border border-gray-200 dark:border-gray-700 relative">
+                        <img src="images/vindicare-gameplay1.png" alt="Sistem Menu dan Dialog"
+                            class="w-full h-full object-cover fallback-bg">
+                        <span
+                            class="absolute inset-0 flex items-center justify-center text-gray-500 font-semibold opacity-50 translate-text"
+                            data-id="[Sistem Menu / UI]" data-en="[Menu System / UI]">[Sistem Menu / UI]</span>
                     </div>
-                    <div class="bg-gray-200 dark:bg-gray-800 aspect-video rounded-lg overflow-hidden border border-gray-200 dark:border-gray-700 relative">
-                        <img src="images/vindicare-ss2.png" alt="Vindicare Gameplay 2" class="w-full h-full object-cover fallback-bg">
-                        <span class="absolute inset-0 flex items-center justify-center text-gray-500 font-semibold opacity-50 translate-text" data-id="[Screenshot 2]" data-en="[Screenshot 2]">[Screenshot 2]</span>
+                    <div
+                        class="bg-gray-200 dark:bg-gray-800 aspect-video rounded-lg overflow-hidden border border-gray-200 dark:border-gray-700 relative">
+                        <img src="images/vindicare-boss.png" alt="Pertarungan Melawan Bos Golem"
+                            class="w-full h-full object-cover fallback-bg">
+                        <span
+                            class="absolute inset-0 flex items-center justify-center text-gray-500 font-semibold opacity-50 translate-text"
+                            data-id="[Boss Fight - Golem]" data-en="[Boss Fight - Golem]">[Boss Fight - Golem]</span>
                     </div>
                 </div>
             </div>
@@ -125,26 +238,58 @@
         </div>
     </section>
 
-    <footer id="kontak" class="bg-white dark:bg-gray-900 py-12 text-center border-t border-gray-200 dark:border-gray-800 transition-colors duration-300">
-        <h2 class="text-2xl font-bold mb-8 text-gray-900 dark:text-white translate-text" data-id="Hubungi Saya" data-en="Let's Connect">Hubungi Saya</h2>
+    <footer id="kontak"
+        class="bg-white dark:bg-gray-900 py-12 text-center border-t border-gray-200 dark:border-gray-800 transition-colors duration-300">
+        <h2 class="text-2xl font-bold mb-8 text-gray-900 dark:text-white translate-text" data-id="Hubungi Saya"
+            data-en="Let's Connect">Hubungi Saya</h2>
         <div class="flex flex-wrap justify-center gap-6 mb-8 px-4">
-            <a href="https://www.facebook.com/farizirvansyah" target="_blank" class="flex items-center text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition group">
-                <svg class="w-6 h-6 mr-2 fill-current group-hover:scale-110 transition-transform" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22.675 0h-21.35C.593 0 0 .593 0 1.325v21.351C0 23.407.593 24 1.325 24H12.82v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.116c.73 0 1.323-.593 1.323-1.325V1.325C24 .593 23.407 0 22.675 0z"/></svg>
+            <a href="https://www.facebook.com/farizirvansyah" target="_blank"
+                class="flex items-center text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition group">
+                <svg class="w-6 h-6 mr-2 fill-current group-hover:scale-110 transition-transform" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M22.675 0h-21.35C.593 0 0 .593 0 1.325v21.351C0 23.407.593 24 1.325 24H12.82v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.116c.73 0 1.323-.593 1.323-1.325V1.325C24 .593 23.407 0 22.675 0z" />
+                </svg>
             </a>
-            <a href="https://twitter.com/farizirvansyah" target="_blank" class="flex items-center text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition group">
-                <svg class="w-6 h-6 mr-2 fill-current group-hover:scale-110 transition-transform" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            <a href="https://twitter.com/farizirvansyah" target="_blank"
+                class="flex items-center text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition group">
+                <svg class="w-6 h-6 mr-2 fill-current group-hover:scale-110 transition-transform" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                </svg>
             </a>
-            <a href="https://www.instagram.com/farizirvansyah/" target="_blank" class="flex items-center text-gray-600 dark:text-gray-400 hover:text-pink-600 dark:hover:text-pink-400 transition group">
-                <svg class="w-6 h-6 mr-2 fill-current group-hover:scale-110 transition-transform" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            <a href="https://www.instagram.com/farizirvansyah/" target="_blank"
+                class="flex items-center text-gray-600 dark:text-gray-400 hover:text-pink-600 dark:hover:text-pink-400 transition group">
+                <svg class="w-6 h-6 mr-2 fill-current group-hover:scale-110 transition-transform" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                </svg>
             </a>
-            <a href="mailto:farizirvansyah@gmail.com" class="flex items-center text-gray-600 dark:text-gray-400 hover:text-red-600 dark:hover:text-red-400 transition group">
-                <svg class="w-6 h-6 mr-2 fill-current group-hover:scale-110 transition-transform" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+            <a href="mailto:farizirvansyah@gmail.com"
+                class="flex items-center text-gray-600 dark:text-gray-400 hover:text-red-600 dark:hover:text-red-400 transition group">
+                <svg class="w-6 h-6 mr-2 fill-current group-hover:scale-110 transition-transform" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+                </svg>
             </a>
-            <a href="https://github.com/farizirvansyah" target="_blank" class="flex items-center text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition group">
-                <svg class="w-6 h-6 mr-2 fill-current group-hover:scale-110 transition-transform" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+            <a href="https://github.com/farizirvansyah" target="_blank"
+                class="flex items-center text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition group">
+                <svg class="w-6 h-6 mr-2 fill-current group-hover:scale-110 transition-transform" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                </svg>
             </a>
-            <a href="https://www.linkedin.com/in/farizirvansyah/" target="_blank" class="flex items-center text-gray-600 dark:text-gray-400 hover:text-blue-700 dark:hover:text-blue-500 transition group">
-                <svg class="w-6 h-6 mr-2 fill-current group-hover:scale-110 transition-transform" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            <a href="https://www.linkedin.com/in/farizirvansyah/" target="_blank"
+                class="flex items-center text-gray-600 dark:text-gray-400 hover:text-blue-700 dark:hover:text-blue-500 transition group">
+                <svg class="w-6 h-6 mr-2 fill-current group-hover:scale-110 transition-transform" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                </svg>
             </a>
         </div>
         <p class="text-sm text-gray-500 dark:text-gray-600">&copy; 2026 Fariz Irvansyah.</p>
@@ -204,12 +349,13 @@
             localStorage.setItem('language', currentLang);
             applyLanguage(currentLang);
         });
-        
+
         document.querySelectorAll('img.fallback-bg').forEach(img => {
-            img.addEventListener('error', function() {
+            img.addEventListener('error', function () {
                 this.style.display = 'none';
             });
         });
     </script>
 </body>
+
 </html>
